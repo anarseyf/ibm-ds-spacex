@@ -1,9 +1,0 @@
-@startuml spacex
-
-actor notebook
-actor api
-
-notebook -> api : request
-api -> notebook : response
-
-@enduml
