@@ -1,0 +1,50 @@
+@startuml 4-ml
+
+start
+:Import CSV as DataFrame;
+:Normalize data;
+-> Split data;
+
+split
+-> 80%;
+:Training data;
+split again
+-> 20%;
+:Test data;
+end split
+
+:Create models;
+
+split
+-> LogReg;
+:Grid search, Fit;
+-> select best\nparameters;
+:Score model;
+:Confusion matrix;
+split again
+-> Tree;
+:Grid search, Fit;
+-> select best\nparameters;
+:Score model;
+:Confusion matrix;
+split again
+-> SVM;
+:Grid search, Fit;
+-> select best\nparameters;
+:Score model;
+:Confusion matrix;
+split again
+-> KNN;
+:Grid search, Fit;
+-> select best\nparameters;
+:Score model;
+:Confusion matrix;
+end split
+
+-> Compare scores;
+
+:Select best model;
+
+end
+
+@enduml

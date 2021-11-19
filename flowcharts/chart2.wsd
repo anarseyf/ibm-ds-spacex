@@ -1,0 +1,13 @@
+@startuml 2-scraping
+
+start
+-> HTTP get wiki page;
+:Page text;
+-> BeautifulSoup;
+:HTML tables;
+:Columns --> Arrays;
+:Arrays --> Dictionary;
+:Dictionary --> DataFrame;
+end
+
+@enduml

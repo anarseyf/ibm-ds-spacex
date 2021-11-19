@@ -1,0 +1,15 @@
+@startuml 3-wrangling
+
+start
+:import CSV;
+:For each entry:;
+if (Landing Success?) then
+:class = 1;
+else
+:class = 0;
+endif
+
+:add 'class' to DataFrame;
+end
+
+@enduml

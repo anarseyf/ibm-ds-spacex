@@ -1,0 +1,36 @@
+@startuml 1-api
+
+title SpaceX API
+
+skinparam responseMessageBelowArrow true
+
+client -> SpaceX : /api/launches
+SpaceX -> client : {json}
+
+...
+
+client -> client: normalize JSON
+
+...
+
+client -> SpaceX : /api/rockets
+SpaceX -> client : {json}
+
+client -> SpaceX : /api/launchpads
+SpaceX -> client : {json}
+
+client -> SpaceX : /api/payloads
+SpaceX -> client : {json}
+
+client -> SpaceX : /api/cores
+SpaceX -> client : {json}
+
+...
+
+client -> client: create DataFrame
+
+client -> client: filter by "Falcon 9"
+
+client -> client: replace missing payload values
+
+@enduml
